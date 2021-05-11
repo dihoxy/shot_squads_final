@@ -1,0 +1,19 @@
+Screen:
+    NavigationLayout:
+        ScreenManager:
+            Screen:
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDToolbar:
+                        title: 'Shot Squads'
+                        left_action_items: [["menu", lambda x: nav_draw.set_state("open")]] # toggle nav_draw is deprecated (unlikely
+                        # to be supported in the future)
+
+
+
+                    MDBottomAppBar:
+                        MDToolbar:
+                            icon: 'note-plus'
+
+        MDNavigationDrawer:
+            id: nav_draw
