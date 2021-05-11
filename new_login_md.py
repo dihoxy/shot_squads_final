@@ -19,6 +19,8 @@ con = psy.connect(
 
 cur = con.cursor()
 
+class LoginScreen(Screen):
+    pass
 
 class MainScreen(Screen):
     pass
