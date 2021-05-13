@@ -1,18 +1,14 @@
+
+
 Screen:
     NavigationLayout:
         ScreenManager:
-            Screen:
+            LoginScreen:
+#                name: 'login'
                 BoxLayout:
                     orientation: 'vertical'
-                    MDToolbar:
-                        title: 'Login'
-                        MDIconButton:
-                            icon: 'android'
-                            text: 'Login'
-#                            on_press: root.manager.current = 'main'
-                    Widget:
 
-            Screen:
+            MainScreen:
                 name: 'main'
                 BoxLayout:
                     orientation: 'vertical'
@@ -33,6 +29,40 @@ Screen:
             id: nav_draw
             BoxLayout:
                 orientation: 'vertical'
+                Image: # Kivy keyword for adding an image
+                    source: '1596215229234.jpg'
                 MDLabel:
-                    text: "Add New Patient"
+                    text: "New Patient"
+                    font_style: 'Subtitle2'
+                    height: self.texture_size[1]
                     pos_hint:
+
+                ScrollView: # forces all objects to the top
+
+<LoginScreen>:
+    name: 'login'
+    BoxLayout:
+        orientation: 'vertical'
+        MDToolbar:
+            title: 'Login'
+        Widget:
+    MDRaisedButton:
+        text: 'Login'
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+#        size_hint: (10, 15)
+        on_press: root.manager.current = 'main'
+    MDLabel:
+        text: 'Username:'
+        font_style: "Button"
+        pos_hint: {"center_x": 0.5, "center_y": 0.65}
+    MDLabel:
+        text: 'Password:'
+        font_style: "Button"
+        pos_hint: {"center_x": 0.5, "center_y": 0.6}
+    MDTextField:
+        pos_hint: {"center_x": 0.80, "center_y": 0.65}
+
+
+
+<MainScreen>:
+    name: 'main'

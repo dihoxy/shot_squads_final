@@ -1,0 +1,46 @@
+Screen:
+    NavigationLayout:
+        WindowManager:
+            LoginScreen:
+            MainScreen:
+        MDNavigationDrawer:
+            id: nav_draw
+            BoxLayout:
+                orientation: 'vertical'
+                MDLabel:
+                    text: "New Patient"
+                    font_style: 'Subtitle2'
+                    height: self.texture_size[1]
+
+
+
+
+<LoginScreen>:
+    name: 'login'
+        MDToolbar:
+            title: 'Login'
+        MDIconButton:
+            icon: 'android'
+            text: 'Login'
+            on_press: root.manager.current = 'main'
+    Widget:
+
+
+<MainScreen>:
+    name: 'main'
+    BoxLayout:
+    orientation: 'vertical'
+    MDToolbar:
+        title: 'Shot Squads'
+        left_action_items: [["menu", lambda x: nav_draw.set_state("open")]]
+        # toggle nav_draw is deprecated (unlikely
+        # to be supported in the future)
+
+    Widget: # this widget keeps the toolbar from going to the bottom
+
+    MDBottomAppBar:
+        MDToolbar:
+            icon: 'note-plus'
+
+
+

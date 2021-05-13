@@ -19,21 +19,33 @@ con = psy.connect(
 
 cur = con.cursor()
 
+
 class LoginScreen(Screen):
     pass
+
 
 class MainScreen(Screen):
     pass
 
 
-class WindowManager(ScreenManager):
-    pass
+# class WindowManager(ScreenManager):
+#     pass
+
+
+# sm = ScreenManager()
+# sm.add_widget(LoginScreen(name='login'))
+# sm.add_widget(MainScreen(name='main'))
+
+
+# class WindowManager(ScreenManager):
+#     pass
 
 
 class ShotmdApp(MDApp):
     def build(self):
         kv = Builder.load_file("shotMD.kv")  # this must be loaded in the 'App' class to prevent it from being loaded
         # before the main app has a chance to initialize (which returns a ValueError)
+
         return kv
 
     def test_function(self):

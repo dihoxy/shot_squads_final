@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:postgresql://ec2-18-214-195-34.compute-1.amazonaws.com:5432/dao5ci75ci5u9b</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="shot_squads_final" uuid="71db8256-917c-4bae-91cb-619d6c1eb8ee">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-18-214-195-34.compute-1.amazonaws.com:5432/dao5ci75ci5u9b</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
