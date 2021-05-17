@@ -1,0 +1,215 @@
+<Button>:
+    font_size: 22
+
+<Label>:
+    size_hint: (1.0, 1.0)
+
+
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+    FourthWindow:
+    FifthWindow:
+
+
+
+<MainWindow>:
+    name: "Main"
+
+    GridLayout:
+        cols: 1
+
+        GridLayout:
+            cols: 2
+
+            Button:
+                text: "Enter New Patient"
+                on_press: root.manager.current = "Patient"
+
+            Button:
+                text: "Search For Patient"
+                on_press: root.manager.current = "Search"
+
+            Button:
+                text: "Patient's Policy Holders"
+                on_press: root.manager.current = "policy_holders"
+
+
+
+
+<SecondWindow>:
+    name: "Patient"
+
+    # instantiating kivy objects
+    pt_ssn: ssn
+    pt_fname: patient_fname
+    pt_lname: patient_lname
+    pt_dob: patient_dob
+    pt_st_add: patient_st_add
+    pt_zipcode: patient_zipcode
+    pt_phone: patient_phone
+    pt_email: pt_email
+    policy_holder: policy_holder_ssn
+
+
+
+    GridLayout:
+        cols: 1
+        # set the size of the GridLayout to the size of the root widget, which is the entire screen
+        size: root.width, root.height
+
+        GridLayout:
+            cols: 2
+            rows: 9
+
+            Label:
+                text: "Patient SSN: "
+
+
+            # set TextInput id to match object properties
+            TextInput:
+                id: ssn
+                multiline: False
+
+
+            Label:
+                text: "Patient First Name: "
+
+            TextInput:
+                id: patient_fname
+                multiline: False
+
+            Label:
+                text: "Patient Last Name: "
+
+            TextInput:
+                id: patient_lname
+                multiline: False
+
+            Label:
+                text: "Patient DOB: "
+
+            TextInput:
+                id: patient_dob
+                multiline: False
+
+            Label:
+                text: "Patient Street Address: "
+
+            TextInput:
+                id: patient_st_add
+                multiline: False
+
+            Label:
+                text: "Patient Zip Code: "
+
+
+            TextInput:
+                id: patient_zipcode
+                multiline: False
+
+            Label:
+                text: "Patient Phone#: "
+
+            TextInput:
+                id: patient_phone
+                multiline: False
+
+            Label:
+                text: "Patient Email"
+
+            TextInput:
+                id: pt_email
+                multiline: False
+
+
+            Label:
+                text: "Policy Holder SSN: "
+
+            TextInput:
+                id: policy_holder_ssn
+                multiline: False
+
+
+#            Button:
+#                text: "Previous"
+#                pos_hint: {"top": 1.0, "left": 0.75}
+
+        Button:
+            text: "Submit"
+            on_press: root.btn()
+
+        Button:
+            text: "Main Screen"
+            on_press: root.manager.current = "Main"
+
+
+<ThirdWindow>:
+    name: "Search"
+
+    pt_fir_name: pt_fir_name
+    pt_output: pt_output
+
+    GridLayout:
+        cols: 1
+
+        GridLayout:
+            cols: 3
+
+            Label:
+                text: "Enter Patient Name"
+
+            Label:
+                id: pt_output
+                text: "Patient Info"
+
+
+            TextInput:
+                id: pt_fir_name
+                multiline: False
+
+
+        Button:
+            text: "Search Patients"
+            on_press: root.btn_2()
+
+        Button:
+            text: "Main Screen"
+            on_press: root.manager.current = "Main"
+
+
+
+
+
+<FourthWindow>:
+    name: "policy_holders"
+    pt_id: pt_id
+    pt_display: pt_display
+
+    FloatLayout:
+        size: root.width, root.height
+
+#FloatLayout pos_hint dictionary: {"x", "y", "top", "bottom", "left", "right"}
+        Label:
+            text: "Enter Patient ID: "
+            pos_hint: {"center_x": 0.35, "center_y": 0.60}
+            font_size: 22
+
+        TextInput:
+            id: pt_id
+            pos_hint: {"center_x": 0.56, "center_y": 0.60}
+            size_hint: (0.15, 0.04)
+
+        Label:
+            id: pt_display
+            text: ""
+            pos_hint: {"center_x": 0.45, "center_y": 0.25}
+            font_size: 32
+
+
+        Button:
+            text: "Submit"
+            pos_hint: {"center_x": 0.45, "center_y": 0.35}
+            size_hint: (0.3, 0.1)
+            on_press: root.btn_3()

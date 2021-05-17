@@ -21,7 +21,21 @@ cur = con.cursor()
 
 
 class LoginScreen(Screen):
-    pass
+    # kivy objects
+    username = ObjectProperty(None)
+    password = ObjectProperty(None)
+
+    def btn(self):
+        cur.execute(
+            'SELECT "EMP_PASSWORD" FROM dao5ci75ci5u9b.public."LOGIN" WHERE "EMP_USERNAME" = (%s);',
+            (self.username.text,))
+        pw = cur.fetchall()
+        if pw != self.password.text:
+            # return False
+            print("Incorrect Password")
+        else:
+            print("correct")
+
 
 
 class MainScreen(Screen):

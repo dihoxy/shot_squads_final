@@ -41,16 +41,22 @@ Screen:
 
 <LoginScreen>:
     name: 'login'
+
+    # instantiate kivy objects
+    username: username
+    password: user_password
+
     BoxLayout:
         orientation: 'vertical'
         MDToolbar:
             title: 'Login'
         Widget:
+
     MDRaisedButton:
         text: 'Login'
-        pos_hint: {"center_x": 0.5, "center_y": 0.5}
-#        size_hint: (10, 15)
-        on_press: root.manager.current = 'main'
+        pos_hint: {"center_x": 0.5, "center_y": 0.45}
+        on_press: root.btn()
+#        on_release: if root.btn() is True: root.manager.current = 'main'
     MDLabel:
         text: 'Username:'
         font_style: "Button"
@@ -58,9 +64,23 @@ Screen:
     MDLabel:
         text: 'Password:'
         font_style: "Button"
-        pos_hint: {"center_x": 0.5, "center_y": 0.6}
-    MDTextField:
+        pos_hint: {"center_x": 0.5, "center_y": 0.57}
+
+    MDTextField: # text field for 'Username'
+        id: username
         pos_hint: {"center_x": 0.80, "center_y": 0.65}
+        helper_text: "Enter your username:"
+        helper_text_mode: "on_focus"
+
+    MDTextField: # text field for 'Password'
+        id: user_password
+        password: True
+        pos_hint: {"center_x": 0.80, "center_y": 0.58}
+        helper_text: "Enter your password:"
+        helper_text_mode: "on_focus"
+
+
+
 
 
 
