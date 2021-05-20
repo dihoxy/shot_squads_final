@@ -30,11 +30,13 @@ class LoginScreen(Screen):
             'SELECT "EMP_PASSWORD" FROM dao5ci75ci5u9b.public."LOGIN" WHERE "EMP_USERNAME" = (%s);',
             (self.username.text,))
         pw = cur.fetchall()
-        if pw != self.password.text:
-            # return False
-            print("Incorrect Password")
+        print(pw[0][0])
+        if pw[0][0] == self.password.text:
+            print("correct Password")
+            return True
         else:
-            print("correct")
+            print("incorrect")
+            return False
 
 
 
