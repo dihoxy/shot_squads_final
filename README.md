@@ -8,6 +8,7 @@ Connects to PostgreSQL on the backend
 
 *shotMD.kv and new_login_md.py are the active files. Any other file in this repository is used to transistion from kivy to kivymd*
 
+---
 *05/31/2021*
 -Working on sign-in logic and password verification
-
+---
