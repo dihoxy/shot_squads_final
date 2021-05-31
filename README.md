@@ -4,7 +4,7 @@
 -Mobile application to handle appointment scheduling, employee assignment, inventory, and more
 -This application began in pure kivy but has since changed to kivy md
 -Connects to PostgreSQL on the backend
-*shotMD.kv and new_login_md.py are the active files. Any other file in this repository is used to transistion from kivy to kivymd*
+-*shotMD.kv and new_login_md.py are the active files. Any other file in this repository is used to transistion from kivy to kivymd*
 
 ----
 
